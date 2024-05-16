@@ -14,6 +14,31 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+.header {
+    background: #7e7474 none repeat scroll 0 0;/*标题颜色更改*/
+    transition: all 0.5s ease 0s;
+}
+    .banner-area {  
+    background-color: #7e7474;  
+}
+    .product-area {  
+    background-color: #7e7474;  
+}
+    .discount-product-area {  
+    background-color: #7e7474;  
+}
+    .purchase-online-area {  
+    background-color: #7e7474;  
+}
+    .blog-area {  
+    background-color: #7e7474;  
+}
+    .brand-logo-area {  
+    background-color: #7e7474;  
+}
+    .footer-area{  
+    background-color: #7e7474;  
+}
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;

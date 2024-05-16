@@ -119,7 +119,7 @@
 }
 .nivo-directionNav a::after {
   border-bottom: 26px solid transparent;
-  border-left: 32px solid #F9F9F8;
+  border-left: 32px solid #fff;
   border-top: 26px solid transparent;
   content: "";
   left: 0;

@@ -30,7 +30,7 @@
   	16. Single-Blog
   	17. 404
   	18. Contact
-
+    19. Color
 -----------------------------------------------------------------------------------*/
 
 /*----------------------------------------*/
@@ -2032,10 +2032,41 @@ input.cart-plus-minus-box {
   line-height: 14px;
   padding: 30px 0;
 }
-
-
-
-
+/* =========================================
+	19. Color
+========================================= */
+.header {
+  background: #7e7474 none repeat scroll 0 0;/*标题颜色更改*/
+  transition: all 0.5s ease 0s;
+}
+  .banner-area {  
+  background-color: #7e7474;  
+}
+  .product-area {  
+  background-color: #7e7474;  
+}
+  .discount-product-area {  
+  background-color: #7e7474;  
+}
+  .purchase-online-area {  
+  background-color: #7e7474;  
+}
+  .blog-area {  
+  background-color: #7e7474;  
+}
+  .brand-logo-area {  
+  background-color: #7e7474;  
+}
+  .footer-area{  
+  background-color: #7e7474;  
+}
+  .copyright-area{  
+  background-color: #7e7474;  
+}
+.preview-2 .nivo-directionNav a.nivo-prevNav:hover:before{
+  background: #7e7474;/*颜色更改*/
+  color: #000;
+}
 
 
 
