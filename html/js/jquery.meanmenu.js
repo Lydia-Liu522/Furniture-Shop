@@ -25,6 +25,8 @@
 *
 */
 (function ($) {
+
+
 	"use strict";
 		$.fn.meanmenu = function (options) {
 				var defaults = {
