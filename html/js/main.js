@@ -186,26 +186,35 @@
 /*----------------------------
 	Cart Plus Minus Button
 ------------------------------ */
-	$(".cart-plus-minus").prepend('<div class="dec qtybutton">-</div>');
-	$(".cart-plus-minus").append('<div class="inc qtybutton">+</div>');
-	$(".qtybutton").on("click", function() {
-		var $button = $(this);
-		var oldValue = $button.parent().find("input").val();
-		if ($button.text() == "+") {
-			var newVal = parseFloat(oldValue) + 1;
-		} 
-		else {
-			// Don't allow decrementing below zero
-			if (oldValue > 0) {
-				var newVal = parseFloat(oldValue) - 1;
-			} 
-			else {
-				newVal = 0;
-			}
-		}
-		$button.parent().find("input").val(newVal);
-	});
-
+// 首先，添加加减按钮  
+$(".cart-plus-minus").prepend('<div class="dec qtybutton">-</div>');  
+$(".cart-plus-minus").append('<div class="inc qtybutton">+</div>');  
+  
+// 然后，绑定点击事件  
+$(".qtybutton").on("click", function() {  
+    var $button = $(this);  
+    var $input = $button.closest('.cart-plus-minus').find("input.cart-plus-minus-box"); // 确保选择器正确  
+    var oldValue = parseInt($input.val()) || 0; // 使用parseInt来确保值为整数  
+  
+    if ($button.hasClass('inc')) {  
+        var newVal = oldValue + 1;  
+    } else if ($button.hasClass('dec') && oldValue > 0) {  
+        var newVal = oldValue - 1;  
+    } else {  
+        newVal = 0;  
+    }  
+  
+    $input.val(newVal); // 更新输入框的值  
+  
+    // 假设小计和价格在同一行中  
+    var $row = $button.closest('tr'); // 确保选择器可以正确找到包含价格的行  
+    var $price = $row.find('.product-price');  
+    var price = parseFloat($price.text().replace(/[^\d\.]/g, ''));  
+  
+    // 计算小计并更新  
+    var subtotal = price * newVal;  
+    $row.find('.product-subtotal').text('$' + subtotal.toFixed(2));  
+});
 /*-------------------------
 	accordion toggle function
 --------------------------*/
@@ -232,7 +241,18 @@
 		scrollSpeed: 900,
 		animation: 'fade'
 	}); 	   
-
+/*--------------------------
+	delete
+---------------------------- */	
+    // 提示删除确认，并删除对应的商品列表项
+    $(document).ready(function() { // 确保DOM加载完成后再绑定事件  
+    $('.delete').click(function(e) {  
+		e.preventDefault(); // 阻止默认的链接点击行为  
+		if (window.confirm('Are you sure you want to delete the selected item?')) {  
+			$(this).closest('tr').remove(); // 使用closest找到最近的<tr>元素并删除它  
+		}  
+	});  
+    });  
 /*--------------------------	
 	shop page manu dropdown	
 ---------------------------- */	

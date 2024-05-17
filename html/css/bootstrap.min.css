@@ -972,7 +972,17 @@ pre code {
     margin-left: -15px;
     margin-right: -15px
 }
-
+/* d-flex 对应的 CSS 可能类似于  
+.d-flex {  
+    display: flex;  
+    /* 可能还包含其他与 Flexbox 相关的样式 
+  }  */ 
+    
+  /* justify-content-center 对应的 CSS 可能类似于 */  
+  /* .justify-content-center {  
+    justify-content: center;  
+    /* 可能还包含其他与对齐相关的样式  
+  } */ 
 .col-xs-1,
 .col-sm-1,
 .col-md-1,
