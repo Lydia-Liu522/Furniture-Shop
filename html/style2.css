@@ -2068,22 +2068,73 @@ input.cart-plus-minus-box {
   color: #000;
 }
 
+/* =========================================
+	20. 弹窗修改
+========================================= */
 
-.modal-dialog {
-    max-width: 1000px; /* 设置最大宽度 */
-}
-
-.modal-content {
-    width: 100%; /*设置内容宽度为100%*/
-    height: auto; /* 设置固定高度 */
-}
-
-.modal {
-  display: none; /* 隐藏模态框 */
+#productModal1
+{
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal2
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal5
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal6
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal8
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal7
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal9
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal11
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal10
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal12
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
 }
 
 
+.product-img img {
+  width: auto;
+  height: 300px; /* 设置固定的高度 */
+  object-fit: cover; /* 使用 object-fit 属性来保持图片的比例 */
+}
