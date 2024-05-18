@@ -2033,7 +2033,87 @@ input.cart-plus-minus-box {
   padding: 30px 0;
 }
 
+/* =========================================
+	20. 弹窗修改
+========================================= */
 
+#productModal1
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal2
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal3
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal4
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal5
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal6
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal8
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal7
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal9
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal11
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal10
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal12
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+.product-img img {
+  width: auto;
+  height: 300px; /* 设置固定的高度 */
+  object-fit: cover; /* 使用 object-fit 属性来保持图片的比例 */
+}
 
 
 
