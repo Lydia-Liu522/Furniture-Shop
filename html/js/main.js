@@ -253,6 +253,26 @@ $(".qtybutton").on("click", function() {
 		}  
 	});  
     });  
+	// 等待文档加载完成  
+    document.addEventListener('DOMContentLoaded', function() {  
+    // 获取所有.cart-delete a元素  
+    var deleteLinks = document.querySelectorAll('.cart-delete a');  
+      
+    // 对每个.cart-delete a元素添加点击事件监听器  
+    deleteLinks.forEach(function(link) {  
+        link.addEventListener('click', function(event) {  
+            // 阻止默认的链接点击行为  
+            event.preventDefault();  
+              
+            // 找到最近的.single-cart.clearfix父元素并删除它  
+            var cartDiv = this.closest('.single-cart.clearfix');  
+            if (cartDiv) {  
+                cartDiv.remove();  
+            }  
+        });  
+    });  
+});  
+
 /*--------------------------	
 	shop page manu dropdown	
 ---------------------------- */	
