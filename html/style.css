@@ -409,13 +409,15 @@ body {
 /* Banner-area */
 
 .slider-banner-area {
-  padding: 0 100px;
+  padding: 0 100px ;
   position: relative;
+  margin-bottom: 20px; /* 调整上下间距 */
 }
 .banner-2 { margin-top: 50px;}
 .single-banner {
   position: relative;
   transition: all 0.5s ease 0s;
+  margin-bottom: 5px; /* 调整上下间距 */
 }
 .single-banner:hover {
   box-shadow: 1px 8px 15px rgba(0, 0, 0, 0.12);
@@ -440,6 +442,8 @@ body {
   left: 30px;
   position: absolute;
 }
+
+
 /* banner-1 */
 .banner-1 .banner-brief p {line-height: 15px;}
 .banner-1 .button-one {
@@ -452,9 +456,10 @@ body {
   bottom: auto;
   left: auto;
   padding-right: 30px;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 0px;
+  top: 70%;
+  transform: translateY(-60%);
+  transform: translateX(40%);
   width: 70%;
 }
 .banner-2 .banner-title {
@@ -481,7 +486,8 @@ body {
   font-size: 30px;
   line-height: 33px;
 }
-.slider-pro-brief { color: #878686;}
+/* .slider-pro-brief { color: #878686;} */
+.slider-pro-brief { color: #454545;}
 .layer-1 {
   float: right;
   margin-right: 5%;
@@ -700,8 +706,8 @@ body {
   border-radius: 50%;
   float: left;
   height: 112px;
-  margin: 5% 15% 0 25%;
-  padding-top: 30px;
+  margin: 20% 15% 0 25%;
+  padding-top: 35px;
   text-align: center;
   width: 112px;
 }
@@ -738,10 +744,11 @@ body {
 	font-weight: 700;
 }
 .discount-info h1 {
+  margin-top: 130px;
   font-size: 45px;
   font-weight: 900;
-  line-height: 35px;
-  margin-bottom: 15px;
+  line-height: 50px;
+  margin-bottom: 30px;
 }
 /* -----------------------------------------
 	6. Purchase-online-area
@@ -2109,10 +2116,14 @@ input.cart-plus-minus-box {
   top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
 }
 
-.product-img img {
+.product-imghome img {
   width: auto;
   height: 300px; /* 设置固定的高度 */
   object-fit: cover; /* 使用 object-fit 属性来保持图片的比例 */
+}
+
+.discount-info {
+  margin-top: 90px; /* 调整向下的距离 */
 }
 
 

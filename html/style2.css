@@ -411,6 +411,7 @@ body {
 .slider-banner-area {
   padding: 0 100px;
   position: relative;
+  margin-bottom: 20px; /* 调整上下间距 */
 }
 .banner-2 { margin-top: 50px;}
 .single-banner {
@@ -452,9 +453,10 @@ body {
   bottom: auto;
   left: auto;
   padding-right: 30px;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 0px;
+  top: 70%;
+  transform: translateY(-60%);
+  transform: translateX(40%);
   width: 70%;
 }
 .banner-2 .banner-title {
