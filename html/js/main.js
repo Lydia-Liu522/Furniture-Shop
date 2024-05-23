@@ -186,35 +186,75 @@
 /*----------------------------
 	Cart Plus Minus Button
 ------------------------------ */
-// 首先，添加加减按钮  
-$(".cart-plus-minus").prepend('<div class="dec qtybutton">-</div>');  
-$(".cart-plus-minus").append('<div class="inc qtybutton">+</div>');  
+$(document).ready(function() {  
+    // 初始化时添加增减按钮（如果它们还没有被添加）  
+    $(".cart-plus-minus").each(function() {  
+        if ($(this).find('.qtybutton').length === 0) {  
+            $(this).prepend('<div class="dec qtybutton">-</div>');  
+            $(this).append('<div class="inc qtybutton">+</div>');  
+        }  
+    });  
   
-// 然后，绑定点击事件  
-$(".qtybutton").on("click", function() {  
-    var $button = $(this);  
-    var $input = $button.closest('.cart-plus-minus').find("input.cart-plus-minus-box"); // 确保选择器正确  
-    var oldValue = parseInt($input.val()) || 0; // 使用parseInt来确保值为整数  
+    // 监听增减按钮的点击事件  
+    $(document).on('click', '.qtybutton', function() {  
+        var $button = $(this);  
+        var isIncrement = $button.hasClass('inc');  
+        var $input = $button.closest('.cart-plus-minus').find('.cart-plus-minus-box');  
+        var val = parseInt($input.val(), 10);  
+        var price = parseFloat($input.data('price')); // 使用data-price属性获取价格  
   
-    if ($button.hasClass('inc')) {  
-        var newVal = oldValue + 1;  
-    } else if ($button.hasClass('dec') && oldValue > 0) {  
-        var newVal = oldValue - 1;  
-    } else {  
-        newVal = 0;  
+        if (isIncrement || (val > 1 && !isIncrement)) {  
+            $input.val(isIncrement ? val + 1 : val - 1);  
+  
+            // 更新子总价  
+            var subtotal = price * parseInt($input.val(), 10);  
+            $button.closest('tr').find('.product-subtotal').text('$' + subtotal.toFixed(2));  
+  
+            // 更新购物车总价  
+            updateOrderTotal();  
+        }  
+    });  
+  // 监听删除按钮的点击事件  
+  $(document).on('click', '.product-remove a', function(e) {  
+	e.preventDefault(); // 阻止默认的链接行为  
+	  
+	// 移除产品行  
+	var $row = $(this).closest('.product-row');  
+	$row.remove();  
+	  
+	// 更新购物车总价  
+	updateOrderTotal();  
+    });  
+
+    // 更新购物车总价函数  
+    function updateOrderTotal() {  
+	   var total = 0;  
+	   $('.product-row').each(function() {  
+		var subtotal = parseFloat($(this).find('.product-subtotal').text().replace('$', ''));  
+		total += subtotal;  
+	});  
+	    $('#order-total').text('$' + total.toFixed(2));  
     }  
-  
-    $input.val(newVal); // 更新输入框的值  
-  
-    // 假设小计和价格在同一行中  
-    var $row = $button.closest('tr'); // 确保选择器可以正确找到包含价格的行  
-    var $price = $row.find('.product-price');  
-    var price = parseFloat($price.text().replace(/[^\d\.]/g, ''));  
-  
-    // 计算小计并更新  
-    var subtotal = price * newVal;  
-    $row.find('.product-subtotal').text('$' + subtotal.toFixed(2));  
-});
+
+     // 初始时计算总价  
+    updateOrderTotal();  
+
+    });
+/*-------------------------
+	place order
+--------------------------*/
+	document.addEventListener('DOMContentLoaded', function() {  
+		// 获取按钮元素  
+		var button = document.querySelector('.button-one.submit-button');  
+		  
+		// 监听按钮的点击事件  
+		button.addEventListener('click', function(e) {  
+			e.preventDefault(); // 阻止表单默认的提交行为（如果按钮在表单内）  
+			  
+			// 跳转到 order.html  
+			window.location.href = 'order.html';  
+		});  
+	});
 /*-------------------------
 	accordion toggle function
 --------------------------*/
@@ -272,7 +312,18 @@ $(".qtybutton").on("click", function() {
         });  
     });  
 });  
-
+document.addEventListener('DOMContentLoaded', function() {  
+    var deleteButtons = document.querySelectorAll('.delete-comment');  
+      
+    deleteButtons.forEach(function(button) {  
+        button.addEventListener('click', function(event) {  
+            event.preventDefault(); // 阻止默认的链接点击行为  
+            if (window.confirm('Are you sure you want to delete this comment?')) {  
+                this.closest('li').remove(); // 找到最近的<li>元素并删除它  
+            }  
+        });  
+    });  
+});
 /*--------------------------	
 	shop page manu dropdown	
 ---------------------------- */	
