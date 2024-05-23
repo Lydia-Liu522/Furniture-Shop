@@ -327,7 +327,7 @@
 															</tr>
 														</thead>
 														<tbody>
-															<tr>
+															<tr class="product-row">
 																<td class="product-thumbnail  text-left">
 																	<!-- Single-product start -->
 																	<div class="single-product">
@@ -345,7 +345,9 @@
 														        <td class="product-price">$56.00</td>
 																<td class="product-quantity">
 																	 <div class="cart-plus-minus">
-																		<input type="text" value="1" name="qtybutton" class="cart-plus-minus-box">
+
+																		<input type="text" value="1" name="qtybutton" class="cart-plus-minus-box" data-price="56.00">
+																		 
 																	</div> 
 																</td> 
 																<td class="product-subtotal">$56.00</td> 
@@ -353,7 +355,7 @@
 																	<a href="#"><i class="delete zmdi zmdi-close"></i></a>
 																</td> 
 															</tr>
-															<tr>
+															<tr class="product-row">
 																<td class="product-thumbnail  text-left">
 																	<!-- Single-product start -->
 																	<div class="single-product">
@@ -371,7 +373,7 @@
 																<td class="product-price">$46.00</td>
 																<td class="product-quantity">
 																	<div class="cart-plus-minus">
-																		<input type="text" value="2" name="qtybutton" class="cart-plus-minus-box">
+																		<input type="text" value="2" name="qtybutton" class="cart-plus-minus-box" data-price="46.00">
 																	</div>
 																</td>
 																<td class="product-subtotal">$92.00</td>
@@ -379,7 +381,7 @@
 																	<a href="#"><i class="delete zmdi zmdi-close"></i></a>
 																</td>
 															</tr>
-															<tr>
+															<tr class="product-row">
 																<td class="product-thumbnail  text-left">
 																	<!-- Single-product start -->
 																	<div class="single-product">
@@ -397,7 +399,7 @@
 																<td class="product-price">$18.00</td>
 																<td class="product-quantity">
 																	<div class="cart-plus-minus">
-																		<input type="text" value="3" name="qtybutton" class="cart-plus-minus-box">
+																		<input type="text" value="3" name="qtybutton" class="cart-plus-minus-box" data-price="18.00">
 																	</div>
 																</td>
 																<td class="product-subtotal">$54.00</td>
@@ -410,25 +412,11 @@
 												</div>
 											</div>
 											<div class="row">
-												
-												<!-- <div class="col-md-6 col-sm-6 col-xs-12">
-													<div class="customer-login mt-30">
-														<h4 class="title-1 title-border text-uppercase">coupon discount</h4>
-														<p class="text-gray">Enter your coupon code if you have one!</p>
-														<input type="text" placeholder="Enter your code here.">
-														<button type="submit" data-text="apply coupon" class="button-one submit-button mt-15">apply coupon</button>
-													</div>
-												</div> -->
 												<div class="col-md-12">
 													<div class="customer-login payment-details mt-30">  
 														<table>  
 															<tbody>  
-																<tr>  
-																	<!-- <td class="order-total-title">  
-																		<h4 class="title-1 title-border text-uppercase">Order Total</h4>  
-																	</td>  
-																	<td class="order-total-amount text-right" style="color: darkred; font-size:25px">  
-																		<strong>$170.00</strong>   -->
+																<tr> 
 																		<td class="order-total-title">  
 																			<h4 class="title-1 title-border text-uppercase">Order Total</h4>  
 																		</td>  
@@ -437,39 +425,9 @@
 															</tbody>  
 														</table>  
 													</div>
-													<!-- <div class="customer-login payment-details mt-30">
-														<table>
-															<tbody>
-																
-																<tr>
-																	<h4 class="title-1 title-border text-uppercase">Order Total</h4>
-																	<h4 class="text-right"><strong>$170.00</strong></h4>
-																</tr>
-															</tbody>
-														</table>
-													</div> -->
 												</div>
 											</div>
-											<!-- <div class="row">
-												<div class="col-md-12">
-													<div class="customer-login mt-30">
-														<h4 class="title-1 title-border text-uppercase">culculate shipping</h4>
-														<p class="text-gray">Enter your coupon code if you have one!</p>
-														<div class="row">
-															<div class="col-md-4 col-sm-4 col-xs-12">
-																<input type="text" placeholder="Country">
-															</div>
-															<div class="col-md-4 col-sm-4 col-xs-12">
-																<input type="text" placeholder="Region / State">
-															</div>
-															<div class="col-md-4 col-sm-4 col-xs-12">
-																<input type="text" placeholder="Post code">
-															</div>
-														</div>
-														<button type="submit" data-text="get a quote" class="button-one submit-button mt-15">get a quote</button>
-													</div>											
-												</div>
-											</div> -->
+											
 										</form>		
 									</div>
 									<!-- shopping-cart end -->
@@ -506,11 +464,13 @@
 																</td>
 																<td class="product-price">$56.00</td>
 																<td class="product-stock">in stock</td>
-																<td class="product-add-cart">
-																	<a class="text-light-black" href="#"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+																<td class="product-add-cart">  
+																	<a class="text-light-black" href="cart.html">  
+																		<i class="zmdi zmdi-shopping-cart-plus"></i>  
+																	</a>  
 																</td>
 																<td class="product-remove">
-																	<a href="#"><i class="zmdi zmdi-close"></i></a>
+																	<a href="#"><i class="delete zmdi zmdi-close"></i></a>
 																</td>
 															</tr>
 															<tr>
@@ -528,13 +488,15 @@
 																	</div>
 																	<!-- Single-product end -->												
 																</td>
-																<td class="product-price">46.00</td>
+																<td class="product-price">$46.00</td>
 																<td class="product-stock">in stock</td>
-																<td class="product-add-cart">
-																	<a class="text-light-black" href="#"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+																<td class="product-add-cart">  
+																	<a class="text-light-black" href="cart.html">  
+																		<i class="zmdi zmdi-shopping-cart-plus"></i>  
+																	</a>  
 																</td>
 																<td class="product-remove">
-																	<a href="#"><i class="zmdi zmdi-close"></i></a>
+																	<a href="#"><i class="delete zmdi zmdi-close"></i></a>
 																</td>
 															</tr>
 															<tr>
@@ -554,11 +516,13 @@
 																</td>
 																<td class="product-price">$18.00</td>
 																<td class="product-stock">in stock</td>
-																<td class="product-add-cart">
-																	<a class="text-light-black" href="#"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+																<td class="product-add-cart">  
+																	<a class="text-light-black" href="cart.html">  
+																		<i class="zmdi zmdi-shopping-cart-plus"></i>  
+																	</a>  
 																</td>
 																<td class="product-remove">
-																	<a href="#"><i class="zmdi zmdi-close"></i></a>
+																	<a href="#"><i class="delete zmdi zmdi-close"></i></a>
 																</td>
 															</tr>
 														</tbody>
@@ -579,9 +543,9 @@
 															<input type="text" placeholder="Your name here...">
 															<input type="text" placeholder="Email address here...">
 															<input type="text" placeholder="Phone here...">
-															<input type="text" placeholder="Company neme here...">
+															<input type="text" placeholder="Company name here...">
 															<select class="custom-select mb-15">
-																<option>Contry</option>
+																<option>Country</option>
 																<option>Bangladesh</option>
 																<option>United States</option>
 																<option>united Kingdom</option>
@@ -613,9 +577,9 @@
 															<input type="text" placeholder="Your name here...">
 															<input type="text" placeholder="Email address here...">
 															<input type="text" placeholder="Phone here...">
-															<input type="text" placeholder="Company neme here...">
+															<input type="text" placeholder="Company name here...">
 															<select class="custom-select mb-15">
-																<option>Contry</option>
+																<option>Country</option>
 																<option>Bangladesh</option>
 																<option>United States</option>
 																<option>united Kingdom</option>
@@ -995,7 +959,6 @@
 		<!-- main js -->
 		<script src="js/main.js"></script>
 		<script>  
-			
 			</script>
 	</body>
 </html>
