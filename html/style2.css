@@ -2086,6 +2086,18 @@ input.cart-plus-minus-box {
   top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
 }
 
+#productModal3
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal4
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
 #productModal5
 {
   position: fixed;
@@ -2134,9 +2146,64 @@ input.cart-plus-minus-box {
   top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
 }
 
+#productModal13
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal14
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal15
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal16
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal17
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
 
 .product-img img {
   width: auto;
   height: 300px; /* 设置固定的高度 */
   object-fit: cover; /* 使用 object-fit 属性来保持图片的比例 */
+}
+
+/* =========================================
+	20. index-2的discount界面的大小修改
+========================================= */
+
+/* Ensure that the banner images are the same size */
+.single-banner .banner-thumb img {
+  width: 100%;
+  height: 450px; /* Set a fixed height for consistency */
+  object-fit: cover; /* Ensure the image covers the entire area */
+}
+
+
+.discount-product {
+  background-color: white;
+  padding: 20px; /* Adjust padding as needed */
+  margin-bottom: 20px; /* Adjust margin as needed */
+  height: 390px; /* Set a fixed height */
+}
+
+.discount-product img {
+  max-height: 200px; /* Set max height for images to fit within the fixed height */
+  width: 100%; /* Ensure images are responsive */
+  object-fit: cover; /* Cover the image within its container */
 }
