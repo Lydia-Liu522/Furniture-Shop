@@ -55,7 +55,7 @@
 .slick-track
 {
     position: relative;
-    top: 0;
+    top: 100px;
     left: 0;
 
     display: block;
