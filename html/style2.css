@@ -31,6 +31,7 @@
   	17. 404
   	18. Contact
     19. Color
+    20. Quickview修改
 -----------------------------------------------------------------------------------*/
 
 /*----------------------------------------*/
@@ -2190,7 +2191,7 @@ input.cart-plus-minus-box {
 /* Ensure that the banner images are the same size */
 .single-banner .banner-thumb img {
   width: 100%;
-  height: 450px; /* Set a fixed height for consistency */
+  height: 400px; /* Set a fixed height for consistency */
   object-fit: cover; /* Ensure the image covers the entire area */
 }
 
