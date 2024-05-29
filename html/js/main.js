@@ -187,7 +187,7 @@
 	Cart Plus Minus Button
 ------------------------------ */
 $(document).ready(function() {  
-    // 初始化时添加增减按钮（如果它们还没有被添加）  
+    // Add add or subtract buttons at initialization time 
     $(".cart-plus-minus").each(function() {  
         if ($(this).find('.qtybutton').length === 0) {  
             $(this).prepend('<div class="dec qtybutton">-</div>');  
@@ -195,22 +195,22 @@ $(document).ready(function() {
         }  
     });  
   
-    // 监听增减按钮的点击事件  
+    // Listen for click events on the add and subtract buttons  
     $(document).on('click', '.qtybutton', function() {  
         var $button = $(this);  
         var isIncrement = $button.hasClass('inc');  
         var $input = $button.closest('.cart-plus-minus').find('.cart-plus-minus-box');  
         var val = parseInt($input.val(), 10);  
-        var price = parseFloat($input.data('price')); // 使用data-price属性获取价格  
+        var price = parseFloat($input.data('price')); // Get the price using the data-price property  
   
         if (isIncrement || (val > 1 && !isIncrement)) {  
             $input.val(isIncrement ? val + 1 : val - 1);  
   
-            // 更新子总价  
+            // Update subtotal price  
             var subtotal = price * parseInt($input.val(), 10);  
             $button.closest('tr').find('.product-subtotal').text('$' + subtotal.toFixed(2));  
   
-            // 更新购物车总价  
+            // Update shopping cart total price  
             updateOrderTotal();  
         }  
     });  
@@ -222,11 +222,11 @@ $(document).ready(function() {
 	var $row = $(this).closest('.product-row');  
 	$row.remove();  
 	  
-	// 更新购物车总价  
+	// Update shopping cart total price  
 	updateOrderTotal();  
     });  
 
-    // 更新购物车总价函数  
+    // Update the shopping cart total price function  
     function updateOrderTotal() {  
 	   var total = 0;  
 	   $('.product-row').each(function() {  
@@ -236,7 +236,7 @@ $(document).ready(function() {
 	    $('#order-total').text('$' + total.toFixed(2));  
     }  
 
-     // 初始时计算总价  
+     // The total price is calculated initially  
     updateOrderTotal();  
 
     });
@@ -284,27 +284,27 @@ $(document).ready(function() {
 /*--------------------------
 	delete
 ---------------------------- */	
-    // 提示删除确认，并删除对应的商品列表项
-    $(document).ready(function() { // 确保DOM加载完成后再绑定事件  
+    // Prompt to delete the confirmation and delete the corresponding item in the merchandise list
+    $(document).ready(function() { // Ensure that the DOM is loaded before binding the event  
     $('.delete').click(function(e) {  
-		e.preventDefault(); // 阻止默认的链接点击行为  
+		e.preventDefault(); // Prevents the default link-clicking behavior  
 		if (window.confirm('Are you sure you want to delete the selected item?')) {  
-			$(this).closest('tr').remove(); // 使用closest找到最近的<tr>元素并删除它  
+			$(this).closest('tr').remove(); // Find the nearest < tr > Element and delete it  
 		}  
 	});  
     });  
-	// 等待文档加载完成  
+	// Wait for the document to finish loading  
     document.addEventListener('DOMContentLoaded', function() {  
-    // 获取所有.cart-delete a元素  
+    // Gets all the. Cart-delete a elements  
     var deleteLinks = document.querySelectorAll('.cart-delete a');  
       
-    // 对每个.cart-delete a元素添加点击事件监听器  
+    // 对每个.cart-delete a元素For everyone. The cart-delete a element adds a click event listener添加点击事件监听器  
     deleteLinks.forEach(function(link) {  
         link.addEventListener('click', function(event) {  
-            // 阻止默认的链接点击行为  
+            // Prevents the default link-clicking behavior  
             event.preventDefault();  
               
-            // 找到最近的.single-cart.clearfix父元素并删除它  
+            // Find the nearest one. Single-cart. Clearfix parent element and delete it  
             var cartDiv = this.closest('.single-cart.clearfix');  
             if (cartDiv) {  
                 cartDiv.remove();  
@@ -317,9 +317,9 @@ document.addEventListener('DOMContentLoaded', function() {
       
     deleteButtons.forEach(function(button) {  
         button.addEventListener('click', function(event) {  
-            event.preventDefault(); // 阻止默认的链接点击行为  
+            event.preventDefault(); // Prevents the default link-clicking behavior  
             if (window.confirm('Are you sure you want to delete this comment?')) {  
-                this.closest('li').remove(); // 找到最近的<li>元素并删除它  
+                this.closest('li').remove(); // Find the nearest < Li > element and delete it  
             }  
         });  
     });  
@@ -343,3 +343,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 })(jQuery);
+/*--------------------------	
+	Form validation
+---------------------------- */	
+
+// Listen for input event on the name input field  
+document.getElementById('name').addEventListener('input', function() {    
+    var nameInput = this; // Use 'this' to reference the current input field  
+    var name = nameInput.value.trim();    
+    
+    // Check if the name is empty  
+    if (name === '') {    
+        // Display an error (you can add more complex UI error display as needed)  
+        nameInput.setCustomValidity('Please enter your name.');    
+    } else {    
+        // If the name is not empty, clear the custom validation error  
+        nameInput.setCustomValidity('');    
+    }    
+});    
+    
+// Listen for input event on the email input field  
+document.getElementById('email').addEventListener('input', function() {    
+    var emailInput = this;    
+    var email = emailInput.value.trim();    
+    
+    // Use a regular expression to validate the email  
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;    
+    if (!emailRegex.test(email)) {    
+        emailInput.setCustomValidity('Please enter a valid email address.');    
+    } else {    
+        emailInput.setCustomValidity('');    
+    }    
+});    
+// Listen for input events in the phone input box 
+document.getElementById('phone').addEventListener('input', function() {    
+    var phoneInput = this;    
+    var phone = phoneInput.value.trim();    
+    
+    // Check if the phone number is empty  
+    if (phone === '') {    
+        phoneInput.setCustomValidity('Please enter your phone number.');    
+    } else {    
+        phoneInput.setCustomValidity('');    
+    }    
+});
