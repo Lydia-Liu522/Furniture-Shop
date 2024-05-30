@@ -2116,6 +2116,18 @@ input.cart-plus-minus-box {
   top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
 }
 
+#productModal13
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
+#productModal14
+{
+  position: fixed;
+  top: 15%; /* 调整 top 属性，让弹窗整体往下移 */
+}
+
 .product-imghome img {
   width: auto;
   height: 300px; /* 设置固定的高度 */
